@@ -38,6 +38,7 @@
 
   var_dump($desktop);
   var_dump($laptop);
+  
   // Array di oggetti
   $computers = [$desktop, $laptop];
 
@@ -46,7 +47,7 @@
   $laptop->displayProductType(); // Stampa: "Il computer portatile si avvia..."
   
   // Stampo le card utilizzando Bootstrap
-
+  
   //echo ecc ecc 
 ?>
 
@@ -70,17 +71,17 @@
     <h1>php-oop-2</h1>
   </header>
   <main>
-      <div class="container mt-5 shadow">
+      <div class="container mt-5 ">
         <div class="row">
           <div class="col p-3">
-            <div class="card">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus tempora corrupti laborum ut maiores labore! Enim, quod nihil vel ab deserunt est dolor. Accusantium rem, magnam cupiditate ratione ad adipisci.</p>
-            </div>
-          </div>
-          <div class="col p-3">
-            <div class="card">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus tempora corrupti laborum ut maiores labore! Enim, quod nihil vel ab deserunt est dolor. Accusantium rem, magnam cupiditate ratione ad adipisci.</p>
-            </div>
+            <?php foreach ($computers as $computer): ?>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"><?php echo $computer->displayProductType(); ?> </h4>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta saepe aperiam quae ut dicta neque, suscipit, illo consequatur autem commodi similique nihil quas animi dolores ipsum quos, excepturi dolorum aliquid?</p>
+                </div>
+              </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
