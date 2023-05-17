@@ -6,7 +6,7 @@
 
     public function __construct($productType) 
     {
-        echo "Il computer si avvia...";
+        // echo "Il computer si avvia...";
         $this->productType = $productType;
     }
 
@@ -21,7 +21,7 @@
   class Desktop extends Computer{
     public function displayProductType() {
       return "Desktop";
-      echo "Il computer desktop si avvia...";
+      // echo "Il computer desktop si avvia...";
   }
   }
   // Classe Laptop che estende Computer classe figlio 
@@ -29,15 +29,15 @@
   class Laptop extends Computer{
     public function displayProductType() {
       return "Laptop";
-      echo "Il computer portatile si avvia...";
+      // echo "Il computer portatile si avvia...";
   }
   }
   // Creazione degli oggetti
   $desktop = new Desktop("Desktop");
   $laptop = new Laptop("Laptop");
 
-  var_dump($desktop);
-  var_dump($laptop);
+  // var_dump($desktop);
+  // var_dump($laptop);
   
   // Array di oggetti
   $computers = [$desktop, $laptop];
@@ -45,10 +45,7 @@
   // Chiamata al metodo displayProductType() polimorfico
   $desktop->displayProductType(); // Stampa: "Il computer desktop si avvia..."
   $laptop->displayProductType(); // Stampa: "Il computer portatile si avvia..."
-  
-  // Stampo le card utilizzando Bootstrap
-  
-  //echo ecc ecc 
+
 ?>
 
 <!doctype html>
@@ -68,26 +65,65 @@
 
 <body>
   <header class="container text-center mt-5">
-    <h1>php-oop-2</h1>
+    <div class="row">
+      <div class="col">
+        <div class="card bg-dark text-light h">
+          <h1>php-oop-2</h1>
+        </div>
+      </div>
+    </div>
   </header>
+  <!-- header -->
+  <div class="container mt-3 ">
+    <div class="row">
+      <div class="col ">
+        <nav class="navbar navbar-light bg-light justify-content-between bg-dark text-light">
+          <a class="navbar-brand text-light">Navbar</a>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- nav -->
   <main>
-      <div class="container mt-5 ">
-        <div class="row">
-          <div class="col p-3">
-            <?php foreach ($computers as $computer): ?>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title"><?php echo $computer->displayProductType(); ?> </h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta saepe aperiam quae ut dicta neque, suscipit, illo consequatur autem commodi similique nihil quas animi dolores ipsum quos, excepturi dolorum aliquid?</p>
+    <div class="container mt-5">
+        <div class="row justify-content-md-center">
+            <div class="col p-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img" src="https://picsum.photos/600/300" alt="">
+                        <h4 class="card-title"><?php echo $desktop->displayProductType(); ?></h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta saepe aperiam quae ut dicta neque, suscipit, illo consequatur autem commodi similique nihil quas animi dolores ipsum quos, excepturi dolorum aliquid?</p>
+                    </div>
                 </div>
-              </div>
-            <?php endforeach; ?>
+            </div>
+            <div class="col p-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img" src="https://unsplash.it/600/300?image" alt="">
+                        <h4 class="card-title"><?php echo $laptop->displayProductType(); ?></h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta saepe aperiam quae ut dicta neque, suscipit, illo consequatur autem commodi similique nihil quas animi dolores ipsum quos, excepturi dolorum aliquid?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </main>
+  <!-- main -->
+  <footer>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col">
+          <div class="card text-center">
+            <p> by Mario Blasi</p>
           </div>
         </div>
       </div>
-  </main>
-  <footer>
-    <!-- place footer here -->
+    </div>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
