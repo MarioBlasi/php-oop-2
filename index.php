@@ -1,37 +1,10 @@
 <?php
-  // Classe Computer (parent class)
-  class Computer{
-    //displayProductType restituisce il tipo di prodotto corrispondente.
-    protected $productType;
+  require __DIR__ . './Models/Computer.php';
+  require __DIR__ . './Models/Desktop.php';
 
-    public function __construct($productType) 
-    {
-        // echo "Il computer si avvia...";
-        $this->productType = $productType;
-    }
-
-    public function displayProductType() {
-        return $this->productType;
-        
-    }
-}
-
-  // Classe Desktop che estende Computer 
-  // classe figlio questa classe puo modificare il genotore USANDO EXTENDS
-  class Desktop extends Computer{
-    public function displayProductType() {
-      return "Desktop";
-      // echo "Il computer desktop si avvia...";
-  }
-  }
-  // Classe Laptop che estende Computer classe figlio 
-  //classe figlio questa classe puo modificare il genotore USANDO EXTENDS
-  class Laptop extends Computer{
-    public function displayProductType() {
-      return "Laptop";
-      // echo "Il computer portatile si avvia...";
-  }
-  }
+  require __DIR__ . './Models/Laptop.php';
+  
+  
   // Creazione degli oggetti
   $desktop = new Desktop("Desktop");
   $laptop = new Laptop("Laptop");
@@ -77,7 +50,7 @@
   <div class="container mt-3 ">
     <div class="row">
       <div class="col ">
-        <nav class="navbar navbar-light bg-light justify-content-between bg-dark text-light">
+        <nav class="navbar navbar-light justify-content-between bg-dark text-light">
           <a class="navbar-brand text-light">Navbar</a>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -118,7 +91,7 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col">
-          <div class="card text-center">
+          <div class="card text-center bg-dark text-light">
             <p> by Mario Blasi</p>
           </div>
         </div>

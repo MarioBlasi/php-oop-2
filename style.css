@@ -16,3 +16,8 @@ pensate a cosa compone un pc: 'ha un' monitor? 'ha una' mbo? 'ha una' keyboard?
 aggiungere un metodo che stampi la stringa con tutte le info del dispositivo 
 (oltre ai getter/setters necessari).
 */
+
+nav {
+  height: 100px;
+  border-radius: 0.5rem;
+}
