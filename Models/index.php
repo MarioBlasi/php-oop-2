@@ -1,29 +1,36 @@
 <?php
   // Classe Computer (parent class)
   class Computer{
-    public $wheels;
+    //displayProductType restituisce il tipo di prodotto corrispondente.
+    protected $productType;
 
-    public function __construct($wheels)
+    public function __construct($productType) 
     {
-
-      $this->wheels = $wheels;
+        echo "Il computer si avvia...";
+        $this->productType = $productType;
     }
 
-    public function componente() 
-    {
-      return 'porca troia';
+    public function displayProductType() {
+        return $this->productType;
+        
     }
-  }
+}
 
   // Classe Desktop che estende Computer 
   // classe figlio questa classe puo modificare il genotore USANDO EXTENDS
-  class Desktop{
-
+  class Desktop extends Computer{
+    public function displayProductType() {
+      return "Desktop";
+      echo "Il computer desktop si avvia...";
+  }
   }
   // Classe Laptop che estende Computer classe figlio 
   //classe figlio questa classe puo modificare il genotore USANDO EXTENDS
-  class Laptop {
-
+  class Laptop extends Computer{
+    public function displayProductType() {
+      return "Laptop";
+      echo "Il computer portatile si avvia...";
+  }
   }
   // Creazione degli oggetti
   $desktop = new Desktop("Desktop");
@@ -34,7 +41,10 @@
   // Array di oggetti
   $computers = [$desktop, $laptop];
 
-
+  // Chiamata al metodo displayProductType() polimorfico
+  $desktop->displayProductType(); // Stampa: "Il computer desktop si avvia..."
+  $laptop->displayProductType(); // Stampa: "Il computer portatile si avvia..."
+  
   // Stampo le card utilizzando Bootstrap
 
   //echo ecc ecc 
