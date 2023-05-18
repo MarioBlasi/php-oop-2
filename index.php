@@ -3,6 +3,7 @@
   require __DIR__ . '/Models/Computer.php';
   require __DIR__ . '/Models/Desktop.php';
   require __DIR__ . '/Models/Laptop.php';
+  // require __DIR__ . '/Models/DisplayTrait.php';
 
   // Creazione degli oggetti
   $desktop = new Desktop("Desktop");
@@ -86,24 +87,17 @@
   <main>
     <div class="container mt-5">
         <div class="row row-cols-1 row-cols-md-2 justify-content-md-center">
+            <?php foreach ($computers as $computer): ?>
             <div class="col p-3">
                 <div class="card">
                     <div class="card-body">
-                        <img class="card-img" src="https://picsum.photos/600/300" alt="">
-                        <h4 class="card-title mt-4"><?php echo $desktop->displayProductType(); ?></h4>
+                        <img class="card-img" src="https://picsum.photos/id/60/367/267" alt="">
+                        <h4 class="card-title mt-4"><?php echo $computer->displayProductType(); ?></h4>
                         <p class="card-text mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta saepe aperiam quae ut dicta neque, suscipit, illo consequatur autem commodi similique nihil quas animi dolores ipsum quos, excepturi dolorum aliquid?</p>
                     </div>
                 </div>
             </div>
-            <div class="col p-3">
-                <div class="card">
-                    <div class="card-body">
-                        <img class="card-img" src="https://unsplash.it/600/300?image" alt="">
-                        <h4 class="card-title mt-4"><?php echo $laptop->displayProductType(); ?></h4>
-                        <p class="card-text mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta saepe aperiam quae ut dicta neque, suscipit, illo consequatur autem commodi similique nihil quas animi dolores ipsum quos, excepturi dolorum aliquid?</p>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
   </main>
