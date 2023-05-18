@@ -1,8 +1,8 @@
 <?php
 
-  require __DIR__ . './Models/Computer.php';
-  require __DIR__ . './Models/Desktop.php';
-  require __DIR__ . './Models/Laptop.php';
+  require __DIR__ . '/Models/Computer.php';
+  require __DIR__ . '/Models/Desktop.php';
+  require __DIR__ . '/Models/Laptop.php';
 
   // Creazione degli oggetti
   $desktop = new Desktop("Desktop");
